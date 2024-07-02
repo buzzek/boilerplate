@@ -1,0 +1,65 @@
+#
+#
+# This is a template workflow to help you get started with Actions
+# You have to edit few things
+# Remember to rename this file to main.yml and move to .github/workflows after creating the git project
+#
+
+
+name: Deployment to staging
+
+on: push
+
+jobs:
+  build_and_deploy_prod:
+    runs-on: ubuntu-latest
+    # CHANGE IT - add your branch name
+    if: github.ref == 'refs/heads/branch-name'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run dev-build
+
+      - name: Deploy to server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          # CHANGE IT - add your theme path
+          server-dir: ./public_html/dev.bravenew.pl/folder-name/wp-content/themes/theme-name/
+          protocol: 'ftp'
+  build_and_branch_develop:
+    runs-on: ubuntu-latest
+     # CHANGE IT - add your branch name
+    if: github.ref == 'refs/heads/branch-name'
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy to server
+        uses: SamKirkland/FTP-Deploy-Action@4.3.2
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          local-dir: ./
+          # CHANGE IT - add your theme path
+          server-dir: ./public_html/dev.bravenew.pl/folder-name/wp-content/themes/theme-name/
+          protocol: 'ftp'

@@ -1,0 +1,25 @@
+{
+    "version": 2,
+    "settings": {
+        "color": {
+            "defaultPalette": false,
+            "palette": [
+                {
+                    "name": "Primary",
+                    "slug": "primary",
+                    "color": "#3ab54a"
+                },
+                {
+                    "name": "Secondary",
+                    "slug": "secondary",
+                    "color": "#000"
+                },
+                {
+                    "name": "Gray",
+                    "slug": "gray",
+                    "color": "#ebebeb"
+                }
+            ]
+        }
+    }
+}

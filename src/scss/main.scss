@@ -1,0 +1,59 @@
+/*
+*
+* Only for imported parts of styles.
+*
+*/
+
+/*
+*
+* Import core styles
+? Below, files from the demo are imported.
+? When building a project for a client, these code links should be removed
+? when you want to use the demo please give the correct path
+*
+*/
+
+@import "normalize"; // Just for clearing 'bad' browser codes.
+@import "variables"; // Usefull varaibles for every part of styles.
+@import "theme-pres/build-default/variables"; // -||- ovveride for demo
+@import "responsive"; // Styles only for responsive staff.
+@import "theme-pres/build-default/responsive"; // -||- ovveride for demo
+@import "animations"; // Styles only for animations
+@import "theme-pres/build-default/animations"; // -||- ovveride for demo
+@import "extend-rules"; // Styles that can be inherited in other classes
+@import "theme-pres/build-default/extend-rules"; // -||- ovveride for demo
+@import "typography"; // Styles only for typography - text, headers buttons etc.
+@import "theme-pres/build-default/typography"; // -||- ovveride for demo
+@import "grid"; // Styles only for greed created by Brave New
+@import "theme-pres/build-default/grid"; // -||- ovveride for demo
+@import "buttons"; // Styles only for buttons
+@import "theme-pres/build-default/buttons"; // -||- ovveride for demo
+@import "shared-classes"; // Styles with repeating, reusable classes
+@import "theme-pres/build-default/shared-classes"; // -||- ovveride for demo
+@import "custom-classes"; // Styles with repeating, rather short, reusable custom classes (only to this particular theme)
+@import "theme-pres/build-default/custom-classes"; // -||- ovveride for demo
+
+@import "header"; // Styles only for header
+@import "theme-pres/build-default/header"; // -||- ovveride for demo
+@import "footer"; // Styles only for footer
+@import "theme-pres/build-default/footer"; // -||- ovveride for demo
+
+/*
+*
+* Import styles for blocks
+*
+*/
+
+@import "./inc/blocks/blocks"; // Styles for blocks (imported from every block folder)
+
+/*
+*
+* Import styles for custom codes
+*
+*/
+
+@import "custom/custom-post-type-box"; // Styles for cookies bar
+@import "custom/pagination"; // Styles for pagination
+@import "custom/search-result"; // Styles for search result page
+@import "custom/popup"; // Styles for popup window
+@import "custom/cookies"; // Styles for cookies bar

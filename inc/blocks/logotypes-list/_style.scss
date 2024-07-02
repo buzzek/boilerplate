@@ -1,0 +1,36 @@
+/*
+*
+* Styles only for Partners section
+*
+*/
+
+.logotypes-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include to(phoneL) {
+        padding: 1.5rem $col-padding-mobile 3rem;
+    }
+    @include from(phoneL) {
+        padding: 2.5rem $col-padding 6rem;
+    }
+    &__list {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        width: 100%;
+        gap: 4rem;
+    }
+    &__col {
+        width: calc((100% - 2rem) / 2);
+        @include from(tablet) {
+            width: calc((100% - 3 * 2rem) / 4);
+        }
+        @include from(laptop) {
+            width: calc((100% - 7 * 2rem) / 8);
+        }
+        a {
+            width: 100%;
+        }
+    }
+}
